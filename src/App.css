@@ -1,42 +1,434 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css (Pure CSS untuk Header & Footer) */
+
+/* Main Header Styles */
+.main-header {
+    background-color: rgba(26, 32, 44, 0.9); /* bg-gray-900 bg-opacity-90 */
+    backdrop-filter: blur(8px); /* backdrop-blur-md */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+    padding: 1rem; /* p-4 */
+    position: sticky;
+    top: 0;
+    z-index: 50; /* z-50 */
+    border-bottom: 1px solid rgba(75, 85, 99, 0.5); /* border-b border-gray-700/50 */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header-container {
+    max-width: 1280px; /* container mx-auto */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width: 768px) { /* md breakpoint */
+    .header-container {
+        padding-left: 2rem; /* md:px-8 */
+        padding-right: 2rem; /* md:px-8 */
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.site-logo {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: #60a5fa; /* text-blue-400 */
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 0.05em; /* tracking-wider */
 }
 
-.card {
-  padding: 2em;
+@media (min-width: 1024px) { /* lg breakpoint */
+    .site-logo {
+        font-size: 2.25rem; /* lg:text-4xl */
+    }
 }
 
-.read-the-docs {
-  color: #888;
+.site-logo:hover {
+    color: #93c5fd; /* hover:text-blue-300 */
+}
+
+.site-logo-tagline {
+    color: #6b7280; /* text-gray-500 */
+    font-size: 1rem; /* text-base */
+    font-family: 'Inter', sans-serif; /* font-inter */
+    font-weight: 400; /* font-normal */
+    margin-left: 0.5rem; /* ml-2 */
+    display: none; /* hidden */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .site-logo-tagline {
+        display: inline; /* sm:inline */
+    }
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: none; /* hidden */
+    align-items: center;
+    gap: 1.5rem; /* space-x-6 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .desktop-nav {
+        display: flex; /* md:flex */
+    }
+    .header-container {
+        padding-left: 2rem; /* md:px-8 */
+        padding-right: 2rem; /* md:px-8 */
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .desktop-nav {
+        gap: 2rem; /* lg:space-x-8 */
+    }
+}
+
+.nav-link {
+    color: #d1d5db; /* text-gray-300 */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    position: relative;
+    overflow: hidden; /* For the underline effect */
+}
+
+.nav-link:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+}
+
+.nav-link::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* h-0.5 */
+    background-color: #60a5fa; /* bg-blue-400 */
+    transition: width 0.3s ease; /* transition-all duration-300 */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* group-hover:w-full */
+}
+
+
+.btn-contact-now {
+    background-image: linear-gradient(to right, var(--blue-accent-light), var(--cyan-accent)); /* btn-primary-gradient */
+    color: white; /* text-white */
+    padding: 0.5rem 1.25rem; /* px-5 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 1rem; /* text-base */
+    font-weight: 600; /* font-semibold */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+}
+
+.btn-contact-now:hover {
+    background-image: linear-gradient(to right, var(--cyan-accent), var(--blue-accent-light)); /* Reverse gradient on hover */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+    transform: translateY(-3px); /* Subtle lift */
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+    display: block; /* md:hidden */
+    color: #d1d5db; /* text-gray-300 */
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition: color 0.3s ease-in-out;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .mobile-menu-button {
+        display: none; /* md:hidden */
+    }
+}
+
+.mobile-menu-button:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+}
+
+.menu-icon {
+    width: 1.75rem; /* w-7 */
+    height: 1.75rem; /* h-7 */
+}
+
+/* Mobile Menu Panel */
+.mobile-menu-panel {
+    display: none; /* hidden md:hidden */
+    background-color: rgba(55, 65, 81, 0.95); /* bg-gray-800 bg-opacity-95 */
+    backdrop-filter: blur(2px); /* backdrop-blur-sm */
+    padding: 1rem 1rem 1.5rem; /* px-4 pt-4 pb-6 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+    overflow: hidden; /* For smooth slide animation */
+}
+
+.mobile-menu-panel.open {
+    display: block;
+    max-height: 500px; /* Cukup besar untuk konten */
+}
+
+.mobile-menu-panel.closed {
+    display: none; /* Ini akan disembunyikan oleh React state */
+    max-height: 0;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .mobile-menu-panel {
+        display: none !important; /* Pastikan tersembunyi di desktop */
+    }
+}
+
+.mobile-menu-item {
+    display: block;
+    color: #e2e8f0; /* text-gray-200 */
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.mobile-menu-item:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+    background-color: rgba(75, 85, 99, 0.5); /* hover:bg-gray-700/50 */
+}
+
+/* Main Footer Styles */
+.main-footer {
+    background-color: #0c0f1a; /* bg-gray-950 */
+    color: #9ca3af; /* text-gray-400 */
+    padding-top: 3rem; /* py-12 */
+    padding-bottom: 3rem; /* py-12 */
+    border-top: 1px solid #374151; /* border-t border-gray-800 */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+}
+
+.footer-container {
+    max-width: 1280px; /* container mx-auto */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    display: grid;
+    grid-template-columns: 1fr; /* grid grid-cols-1 */
+    gap: 2.5rem; /* gap-10 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .footer-container {
+        padding-left: 2rem; /* md:px-8 */
+        padding-right: 2rem; /* md:px-8 */
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+    }
+}
+
+/* Footer Section 1 (Brand & About) */
+.footer-section-brand {
+    /* md:col-span-1 handled by grid */
+    margin-bottom: 1.5rem; /* For mobile spacing */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .footer-section-brand {
+        margin-bottom: 0;
+    }
+}
+
+.footer-brand-name {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: #60a5fa; /* text-blue-400 */
+    margin-bottom: 1rem; /* mb-4 */
+    font-family: 'Montserrat', sans-serif; /* font-montserrat */
+    letter-spacing: 0.025em; /* tracking-wide */
+}
+
+.footer-about-text {
+    color: #d1d5db; /* text-gray-300 */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.625; /* leading-relaxed */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+/* General Footer Section */
+.footer-section {
+    margin-bottom: 1.5rem; /* For mobile spacing */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .footer-section {
+        margin-bottom: 0;
+    }
+}
+
+.footer-heading {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: white; /* text-white */
+    margin-bottom: 1.25rem; /* mb-5 */
+    font-family: 'Montserrat', sans-serif; /* font-montserrat */
+}
+
+/* Navigation & Contact List */
+.footer-nav-list,
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* space-y-3 */
+}
+
+.footer-link {
+    color: #9ca3af; /* text-gray-400 */
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+}
+
+.icon-sm {
+    font-size: 0.75rem; /* text-xs */
+}
+
+.icon-mr {
+    margin-right: 0.5rem; /* mr-2, mr-3 */
+}
+
+.icon-primary {
+    color: #3b82f6; /* text-blue-500 */
+}
+
+/* Social Links */
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem; /* space-x-6 */
+    margin-top: 1.5rem; /* mb-6 for previous element */
+}
+
+.social-icon-link {
+    color: #9ca3af; /* text-gray-400 */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon-link:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+    transform: scale(1.25); /* hover:scale-125 */
+}
+
+.icon-lg {
+    font-size: 2rem; /* fa-2x */
+}
+
+/* Footer Bottom Text */
+.footer-bottom-text {
+    border-top: 1px solid rgba(55, 65, 81, 0.6); /* border-t border-gray-800/60 */
+    margin-top: 2.5rem; /* mt-10 */
+    padding-top: 1.5rem; /* pt-6 */
+    text-align: center;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+/* Custom Card/Button/Input Styles (for hybrid approach, used by Tailwind parts) */
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-gradient {
+    background-image: linear-gradient(to right, var(--blue-accent-light), var(--cyan-accent), var(--blue-accent-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
+.btn-primary-gradient { /* If this is used by Pure CSS header/footer, keep it. Otherwise, Tailwind will make its own. */
+    background-image: linear-gradient(to right, var(--blue-accent-light), var(--cyan-accent));
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: var(--btn);
+    color: white; /* Pastikan teks tetap putih */
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-primary-gradient:hover {
+    background-image: linear-gradient(to right, var(--cyan-accent), var(--blue-accent-light));
+    box-shadow: var(--btn-hover), 0 0 20px rgba(74, 117, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+.input-style {
+    background-color: var(--dark-bg-light);
+    border: 1px solid #334155;
+    color: #f8fafc;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.input-style:focus {
+    border-color: var(--blue-accent-light);
+    box-shadow: 0 0 0 3px rgba(74, 117, 255, 0.5);
+    background-color: #151a2e;
+    outline: none;
+}
+
+/* Media Queries for Header/Footer Pure CSS */
+@media (max-width: 767px) {
+    .header-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-menu-button {
+        display: block;
+    }
+    .site-logo {
+        font-size: 1.5rem;
+    }
+    /* Footer mobile adjustments */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+    .footer-nav-list,
+    .footer-contact-list {
+        padding-left: 0;
+    }
+    .footer-nav-list li,
+    .footer-contact-list li {
+        list-style: none;
+    }
+    .footer-social-links {
+        justify-content: center;
+    }
 }
