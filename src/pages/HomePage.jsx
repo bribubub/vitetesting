@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
-    // Menambahkan data-animate ke section sebagai fallback
     <section id="hero" className="section-padding bg-dark-bg-deep text-text-light flex flex-col items-center justify-center min-h-[calc(100vh-80px)]" data-animate="fadeIn" data-delay="200">
 
       {/* Gambar Profil */}
