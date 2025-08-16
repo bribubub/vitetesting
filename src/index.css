@@ -60,7 +60,7 @@ a:hover {
 
 .main-content {
     flex-grow: 1;
-    max-width: 1600px;
+    max-width: 6900px;
     margin-left: x;
     margin-right: x;
     padding: 1,2rem;
@@ -109,28 +109,108 @@ a:hover {
 .animated-pulse-width {
     animation: pulse-width 1.5s ease-out forwards;
 }
-/* Styling untuk Scrollbar Kustom */
+/* Styling BARU untuk Scrollbar Modern & Minimalis */
+.custom-scrollbar {
+  --scrollbar-track-color: #1a202c; /* Warna latar belakang trek (gelap) */
+  --scrollbar-thumb-color: #4a75ff; /* Warna gagang scrollbar (biru) */
+  --scrollbar-thumb-hover-color: #00c6ff; /* Warna gagang saat hover (cyan) */
+}
+
+/* Untuk browser berbasis Webkit (Chrome, Safari, Edge) */
 .custom-scrollbar::-webkit-scrollbar {
-  height: 12px;
+  height: 8px; /* Membuat scrollbar lebih tipis */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: var(--dark-bg-deep);
+  background-color: var(--scrollbar-track-color);
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--dark-bg-light);
+  background-color: var(--scrollbar-thumb-color);
   border-radius: 10px;
-  border: 3px solid var(--dark-bg-deep);
+  transition: all 0.2s ease-in-out; /* Transisi halus */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: var(--blue-accent-light);
+  background-color: var(--scrollbar-thumb-hover-color);
+  /* Membuat gagang sedikit lebih besar saat di-hover */
+  transform: scale(1.1); 
 }
 
-/* Fallback untuk browser Firefox */
+/* Untuk browser Firefox */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: var(--dark-bg-light) var(--dark-bg-deep);
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
+
+/* Styling untuk Link Shiny dan css shiny*/
+/*semua list css shiny disini ya*/
+
+/* CSS untuk Efek Shiny Text */
+.shiny-text {
+  --shiny-color: #00c8ff; /* Warna kilauan utama (biru muda) */
+  --shiny-color-2: #a200ff; /* Warna kilauan sekunder (ungu) */
+
+  background: linear-gradient(to right, var(--text-light) 20%, var(--shiny-color), var(--shiny-color-2), var(--text-light) 80%);
+  background-size: 200% auto;
+  
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shiny-effect 4s linear infinite;
+}
+
+@keyframes shiny-effect {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Efek untuk Tombol Shiny */
+.shiny-btn {
+  position: relative; /* Diperlukan untuk posisi pseudo-element */
+  overflow: hidden;   /* Menyembunyikan kilatan saat di luar tombol */
+  transition: color 0.3s ease-in-out;
+}
+
+.shiny-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%) skewX(-20deg); /* Mulai dari luar kiri */
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: transform 0.6s ease;
+}
+
+.shiny-btn:hover::after {
+  transform: translateX(100%) skewX(-20deg); /* Pindahkan kilatan ke kanan saat hover */
+}
+
+/* CSS untuk Efek Text Cursor */
+.text-cursor {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--blue-accent-light); /* Warna kursor */
+  animation: 
+    typing-effect 3s steps(40, end), /* Animasi mengetik */
+    blinking-cursor-effect .75s step-end infinite; /* Animasi berkedip */
+}
+
+/* Keyframes untuk animasi mengetik */
+@keyframes typing-effect {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Keyframes untuk kursor berkedip */
+@keyframes blinking-cursor-effect {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--blue-accent-light); }
+}
+

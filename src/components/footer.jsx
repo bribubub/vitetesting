@@ -44,7 +44,7 @@ function Footer() {
           </ul>
 
           <div className="footer-social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+            <a href="https://www.linkedin.com/in/rafi-nurfadhil-putra-559849373/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
               <i className="fab fa-linkedin icon-lg"></i>
             </a>
             <a href="https://github.com/bribubub" target="_blank" rel="noopener noreferrer" className="social-icon-link">

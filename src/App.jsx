@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import SkillsPage from './pages/SkillsPage'; // Jika Anda ingin halaman ini ada
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 // Import CSS Anda
 import './App.css';
@@ -73,6 +74,7 @@ function App() {
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/portfolio" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="portfolio/:slug" element={<ProjectDetailPage />} />
         </Routes>
       </main>
 

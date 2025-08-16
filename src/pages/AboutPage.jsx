@@ -9,7 +9,7 @@ function AboutPage() {
             <div className="relative group" data-animate="slideInLeft" data-delay="400">
                 <div className="w-full h-full bg-dark-bg-medium rounded-2xl p-6 shadow-deep border border-gray-border transform transition hover:scale-105">
                     {/* Pastikan gambar ini ada di public/ */}
-                    <img src="/profile.jpg" alt="Profile Image" className="w-full rounded-xl mb-6" />
+                    <img src="/Rafi Nurfadhil Putra.jpg" alt="Profile Image" className="w-full rounded-xl mb-6" />
                     <div className="text-center">
                         <h3 className="text-2xl font-bold text-blue-accent-light">Rafi Nurfadhil Putra</h3>
                         <p className="text-text-dark mt-2">Internet of Things</p>

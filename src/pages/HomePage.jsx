@@ -1,31 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ShinyText from '../components/ShinyText'; // Pastikan komponen ShinyText sudah diimpor
 
 function HomePage() {
   return (
-    <section id="hero" className="section-padding bg-dark-bg-deep text-text-light flex flex-col items-center justify-center min-h-[calc(100vh-80px)]" data-animate="fadeIn" data-delay="200">
+    <section id="home" className="section-padding bg-dark-bg-deep text-text-light min-h-screen flex items-center justify-center">
+      <div className="container mx-auto max-w-7xl px-6 text-center">
+        
+        {/* Profile Image */}
+        <div className="mb-8" data-animate="fadeIn" data-delay="200">
+          <img 
+            src="home.jpg" // Ganti dengan path gambar profil Anda di folder public
+            alt="Profil Anda" 
+            className="w-48 h-48 rounded-full mx-auto border-4 border-blue-accent-medium shadow-lg"
+          />
+        </div>
 
-      {/* Gambar Profil */}
-      {/* w-48 h-48 rounded-full object-cover border-4 border-blue-accent-light mb-8 shadow-xl */}
-      <img src="/profile.jpg" alt="Foto Profil Anda" className="w-48 h-48 rounded-full object-cover border-4 border-blue-accent-light mb-8 shadow-xl" data-animate="slideInUp" data-delay="400" />
+        {/* Shiny Title */}
+        <ShinyText className="text-5xl md:text-7xl font-extrabold" data-animate="slideInUp" data-delay="400">
+          Halo, saya Rafi Nurfadhil Putra
+        </ShinyText>
 
-      {/* Judul Utama */}
-      {/* text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-blue-accent-light mb-4 */}
-      <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-blue-accent-light mb-4" data-animate="slideInUp" data-delay="600">
-        Halo, saya <span className="text-gradient">Rafi Nurfadhil Putra</span>
-      </h1>
+        {/* Subtitle dengan Efek Text Cursor */}
+        <div className="mt-6" data-animate="fadeIn" data-delay="600">
+          <p 
+            // Tambahkan kelas text-cursor di sini
+            className="text-cursor text-xl md:text-2xl text-text-dark inline-block"
+          >
+            Seorang Full Stack Developer yang bersemangat di bidang Internet of Things dan Juga dibidang Jaringan Internet.
+          </p>
+        </div>
 
-      {/* Tagline / Profesi */}
-      {/* text-xl md:text-2xl text-text-medium text-center mb-10 */}
-      <p className="text-xl md:text-2xl text-text-medium text-center mb-10" data-animate="slideInUp" data-delay="800">
-        Seorang <span className="font-semibold text-blue-accent-light">Full Stack Developer</span> yang bersemangat di bidang <span className="font-semibold text-blue-accent-light">Internet of Things</span>.
-      </p>
+        {/* Shiny Button */}
+        <div className="mt-12" data-animate="slideInUp" data-delay="800">
+          <Link
+            to="/portfolio"
+            className="btn-primary-gradient shiny-btn text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl transform transition duration-300 hover:scale-105 inline-block"
+          >
+            Lihat Proyek Saya
+          </Link>
+        </div>
 
-      {/* Tombol CTA */}
-      {/* btn-primary-gradient (custom class) text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:scale-105 transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 */}
-      <Link to="/portfolio" className="btn-primary-gradient inline-block text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:scale-105 transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-accent-medium" data-animate="slideInUp" data-delay="1000">
-        Lihat Proyek Saya
-      </Link>
+      </div>
     </section>
   );
 }
