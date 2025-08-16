@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 // Data proyek sekarang diekspor dan TANPA 'tags'
 export const projects = [
   {
-    slug: 'website-portofolio-laravel',
-    title: 'Website Portofolio Laravel',
+    slug: 'Obstacle Avoiding Robotic car Project',
+    title: 'Obstacle Avoiding Robotic car Project',
     description: 'Portofolio pribadi yang dibangun dengan PHP Laravel.',
-    image: '/images/project-laravel.png',
+    image: '/robotic2.jpg',
   },
   {
-    slug: 'aplikasi-iot-monitoring',
-    title: 'Aplikasi IoT Monitoring',
-    description: 'Sistem monitoring data sensor secara real-time.',
-    image: '/images/project-iot.png',
+    slug: 'Web-based Library Management System',
+    title: 'Web-based Library Management System',
+    description: '',
+    image: '/libary1.jpg',
   },
   
    {
     slug: 'brin',
     title: 'Brin Project',
-    description: 'Platform toko online dengan fitur lengkap MERN Stack.',
+    description: '',
     image: '/brin2.jpg',
   },
 
@@ -39,7 +39,7 @@ function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-animate="fadeIn" data-delay="400">
           
           {projects.map((project, index) => (
-            <Link to={`/portfolio/${project.slug}`} key={index} className="group relative h-96 rounded-2xl overflow-hidden shadow-deep border border-gray-border block">
+            <Link to={`/portfolio/${project.slug}`} key={index} className="group relative h-64 rounded-2xl overflow-hidden shadow-deep border border-gray-border block">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               

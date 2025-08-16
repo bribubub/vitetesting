@@ -18,7 +18,7 @@ function HomePage() {
 
         {/* Shiny Title */}
         <ShinyText className="text-5xl md:text-7xl font-extrabold" data-animate="slideInUp" data-delay="400">
-          Halo, saya Rafi Nurfadhil Putra
+          Hello, saya Rafi Nurfadhil Putra
         </ShinyText>
 
         {/* Subtitle dengan Efek Text Cursor */}
@@ -27,7 +27,7 @@ function HomePage() {
             // Tambahkan kelas text-cursor di sini
             className="text-cursor text-xl md:text-2xl text-text-dark inline-block"
           >
-            Seorang Full Stack Developer yang bersemangat di bidang Internet of Things dan Juga dibidang Jaringan Internet.
+           i am a Full Stack Developer excited in a Internet of Things,Networking Computer and a Web Developer.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ function HomePage() {
             to="/portfolio"
             className="btn-primary-gradient shiny-btn text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl transform transition duration-300 hover:scale-105 inline-block"
           >
-            Lihat Proyek Saya
+            Continue to Portfolio
           </Link>
         </div>
 

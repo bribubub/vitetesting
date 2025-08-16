@@ -7,9 +7,11 @@ function AboutPage() {
         <div className="container mx-auto max-w-7xl px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-animate="fadeIn" data-delay="100">
             {/* Gambar Profil dengan Efek Card */}
             <div className="relative group" data-animate="slideInLeft" data-delay="400">
-                <div className="w-full h-full bg-dark-bg-medium rounded-2xl p-6 shadow-deep border border-gray-border transform transition hover:scale-105">
-                    {/* Pastikan gambar ini ada di public/ */}
-                    <img src="/Rafi Nurfadhil Putra.jpg" alt="Profile Image" className="w-full rounded-xl mb-6" />
+                <div className="w-full h-full bg-dark-bg-medium rounded-2xl p-6 shadow-deep border border-gray-border transform transition hover:scale-105 flex flex-col items-center text-center">
+                    {/* Updated image and its wrapper */}
+                    <div className="w-48 h-48 mb-6 overflow-hidden rounded-full">
+                        <img src="/Rafi Nurfadhil Putra.jpg" alt="Profile Image" className="w-full h-full object-cover" />
+                    </div>
                     <div className="text-center">
                         <h3 className="text-2xl font-bold text-blue-accent-light">Rafi Nurfadhil Putra</h3>
                         <p className="text-text-dark mt-2">Internet of Things</p>
@@ -26,7 +28,7 @@ function AboutPage() {
                         Hello IM Rafi Nurfadhil Putra from Informatic Technology my major from IoT (Internet of things) and i am a full stack developer
                     </p>
                     <p data-animate="slideInUp" data-delay="800">
-                        my hobby its pkaying games handphone shooter, reading some books from japanese manga, and watching anime
+                        my hobby its playing games handphone shooter, reading some books from japanese manga, and watching anime
                     </p>
                     <p data-animate="slideInUp" data-delay="1000">
                         I am passionate about creating innovative and user-centric web applications that solve real-world problems. With a strong foundation in both front-end and back-end technologies, I strive to deliver seamless and engaging user experiences.
