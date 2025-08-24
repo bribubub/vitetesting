@@ -25,13 +25,13 @@ function AboutPage() {
 
                 <div className="space-y-4 text-lg text-text-dark leading-relaxed">
                     <p data-animate="slideInUp" data-delay="600">
-                        Hello IM Rafi Nurfadhil Putra from Informatic Technology my major from IoT (Internet of things) and i am a full stack developer
+                     Hello, my name is Rafi Nurfadhil Putra a student of Information Technology with a strong passion for technology and continuous learning. My academic background has given me a solid foundation in IT concepts, problem-solving, and the ability to adapt quickly to new tools and environments.
                     </p>
                     <p data-animate="slideInUp" data-delay="800">
-                        my hobby its playing games handphone shooter, reading some books from japanese manga, and watching anime
+                    I am able to work effectively in a team, communicate clearly, and contribute to achieving common goals. I value collaboration and believe that diverse perspectives are essential for creating innovative solutions.
                     </p>
                     <p data-animate="slideInUp" data-delay="1000">
-                        I am passionate about creating innovative and user-centric web applications that solve real-world problems. With a strong foundation in both front-end and back-end technologies, I strive to deliver seamless and engaging user experiences.
+                    I enjoy facing new challenges and view them as opportunities for personal and professional growth. With a proactive and responsible mindset, I am eager to apply my knowledge and skills to real-world projects and contribute positively to future workplaces.
                     </p>
                 </div>
 
